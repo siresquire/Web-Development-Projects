@@ -1,29 +1,113 @@
 * {
-    margin: 0;
-    padding: 0;
-    }
+    box-sizing: border-box;
+}
 
 body {
-    background-color: #EFF0F0;
-    }
+    margin: 0;
+    padding: 0;
+    background-color: #efefef;
+    font-family: 'Open Sans', sans-serif;
+}
 
-.header {
-    background-color: #43281C;
-    color: #FBF2C0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-    height: 50px;
-    }
-
-.header > img {
-    height: 2em;
-    }
-
-.container {
+.page {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 10px;
-    margin: 10px;
-    }
+    row-gap: 30px;
+    column-gap: 30px;
+    width: 100%;
+    padding: 30px;
+    margin: 0 auto;
+    grid-template-areas:
+        "order payment"
+        "total total";
+    grid-template-columns: 1fr 1fr;
+}
+
+.main-nav {
+    background-color: #43281c;
+    color: #fbf2c0;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+}
+
+.logo {
+    height: 25px;
+    position: relative;
+    top: 3px;
+}
+
+.box {
+    background-color: #eee1d5;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 0.2);
+    padding: 15px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.box-title {
+    color: #885a2d;
+    font-weight: normal;
+    font-size: 16px;
+}
+
+.order {
+    grid-area: order;
+}
+
+.payment {
+    grid-area: payment;
+}
+
+.total {
+    grid-area: total;
+}
+
+.items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.item {
+    border-bottom: 2px solid #DDB892;
+    display: grid;
+
+    padding: 10px 0;
+
+    grid-template-columns: 1fr 8fr 1fr;
+    grid-template-areas: 
+        "quantity title price"
+        "quantity options price";
+    
+    row-gap: 8px;
+}
+
+.item:last-child {
+    border-bottom: none;
+}
+
+.item-quantity {
+    grid-area: quantity;
+}
+
+.item-title {
+    grid-area: title;
+    font-weight: bold;
+}
+
+.item-price {
+    grid-area: price;
+    font-weight: bold;
+}
+
+.item-options-list {
+    grid-area: options;
+    color: #B08968;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+}
