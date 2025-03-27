@@ -21,7 +21,7 @@ jobs:
       - name: Upload artifact for deployment
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './Coffee App'
+          path: './Basic Calculator'
 
   deploy:
     environment:
