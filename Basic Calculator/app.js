@@ -7,7 +7,8 @@ document
         if (target.matches("button")) {
             if (target.textContent === "=") {
                 try {
-                    display.innerHTML = eval(display.innerHTML);
+                    const result = math.evaluate(display.innerHTML);
+                    display.innerHTML = result;
                 } catch (error) {
                     display.innerHTML = "Error";
                 }
